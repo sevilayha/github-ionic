@@ -10,6 +10,13 @@ import { OrganizationsPage } from '../pages/organizations/organizations';
 import { ReposPage } from '../pages/repos/repos';
 import { UsersPage } from '../pages/users/users';
 import { GithubUsersProvider } from '../providers/github-users/github-users';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '9366f44e'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -22,6 +29,7 @@ import { GithubUsersProvider } from '../providers/github-users/github-users';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
